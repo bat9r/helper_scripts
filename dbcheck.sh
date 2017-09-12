@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "MySQL User:"
 read user
 echo "MySQL Password:"
