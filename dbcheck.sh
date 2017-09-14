@@ -1,8 +1,6 @@
 #!/bin/bash
-echo "MySQL User:"
-read user
-echo "MySQL Password:"
-read password
+user=$1
+password=$2
 db_name="user_data"
 RESULT='mysql -u $user -p$password -e "SHOW DATABASES" | grep -Fo $db_name'
 if [ "$RESULT" = "$db_name" ]
