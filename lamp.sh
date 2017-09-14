@@ -13,8 +13,7 @@ then
 		echo "Y" | sudo yum update
 		echo "Y" | sudo yum install httpd
 		sudo service httpd start
-		echo "Y" | sudo yum install mysql mysql-server
-		sudo mysql_secure_installation
+		echo "Y" | sudo yum install mariadb mariadb-server
 		sudo service mariadb start
 		echo "Y" | sudo yum install php php-mysqlnd
 	fi
