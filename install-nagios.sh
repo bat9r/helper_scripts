@@ -2,6 +2,9 @@
 
 #For CentOS 7
 
+user_name=$1
+admin_name=$2
+
 #Security-Enhanced Linux
 sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
 setenforce 0
@@ -20,10 +23,8 @@ cd /tmp/nagioscore-nagios-4.3.4/
 make all
 
 #Create User And Group
-echo "User name: "
-read user_name
 useradd $user_name
-usermod -a -G nagios apache
+usermod -a -G $user_name apache
 
 #Install Binaries
 make install
@@ -47,8 +48,6 @@ firewall-cmd --zone=public --add-port=80/tcp
 firewall-cmd --zone=public --add-port=80/tcp --permanent
 
 #Create nagiosadmin User Account 
-echo "Admin name"
-read admin_name
 htpasswd -c /usr/local/nagios/etc/htpasswd.users $admin_name
 
 #Start Apache Web Server
