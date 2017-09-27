@@ -26,3 +26,6 @@ sudo mv /usr/share/tomcat/conf/tomcat-users2.xml /usr/share/tomcat/conf/tomcat-u
 sudo systemctl start tomcat
 sudo systemctl enable tomcat
 
+#Configure tomcat+maven (deploy)
+sudo sed '/<\/servers>/i <server>\n<id>TomcatServer<\/id>\n<username>admin<\/username>\n<password>password<\/password>\n<\/server>\n' /opt/maven/conf/settings.xml | /opt/maven/conf/settings2.xml
+sudo mv /opt/maven/conf/settings2.xml /opt/maven/conf/settings.xml
