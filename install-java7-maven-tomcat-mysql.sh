@@ -21,7 +21,7 @@ wget -O /opt/apache-maven-3.5.0-bin.tar.gz http://www-eu.apache.org/dist/maven/m
 sudo tar xzf /opt/apache-maven-3.5.0-bin.tar.gz
 sudo ln -s /opt/apache-maven-3.5.0  maven
 sudo touch /etc/profile.d/maven.sh
-sudo echo -e "\n export M2_HOME=/opt/maven \n export PATH=${M2_HOME}/bin:${PATH} " | sudo tee --append /etc/profile.d/maven.sh
+sudo echo -e "\n export M2_HOME=/opt/maven \n export PATH=\${M2_HOME}/bin:\${PATH} " | sudo tee --append /etc/profile.d/maven.sh
 rm -f /opt/apache-maven-3.5.0-bin.tar.gz
 
 #Install tomcat
