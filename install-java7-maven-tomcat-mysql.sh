@@ -33,8 +33,8 @@ echo "y" | sudo yum install tomcat-webapps tomcat-admin-webapps
 echo "y" | sudo yum install tomcat-docs-webapp tomcat-javadoc
 sudo sed "/<\/tomcat-users>/i <role rolename=\"manager-gui\"\/>\n<role rolename=\"manager-script\"\/>\n<user username=\"$tomcat_user\" password=\"$tomcat_password\" roles=\"manager-gui,admin-gui\"\/>\n" /usr/share/tomcat/conf/tomcat-users.xml | sudo tee /usr/share/tomcat/conf/tomcat-users2.xml
 sudo mv /usr/share/tomcat/conf/tomcat-users2.xml /usr/share/tomcat/conf/tomcat-users.xml
-sudo firewall-cmd --zone=public --add-port=80/tcp
-sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+sudo firewall-cmd --zone=public --add-port=8080/tcp
+sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
 sudo systemctl start tomcat
 sudo systemctl enable tomcat
 
