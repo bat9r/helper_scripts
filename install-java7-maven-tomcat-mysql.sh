@@ -11,8 +11,8 @@ first_db="test_oms_db"
 second_db="product_oms_db"
 
 #Install java 7
-echo "y" | sudo yum install java-1.7.0-openjdk
 echo "y" | sudo yum install java-1.7.0-openjdk-devel
+echo "y" | sudo yum install java-1.7.0-openjdk
 sudo alternatives --config java
 
 #Install maven
