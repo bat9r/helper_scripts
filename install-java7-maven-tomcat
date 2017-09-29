@@ -5,10 +5,6 @@
 #Tomcat user and pass
 tomcat_user="admin"
 tomcat_password="admin"
-mysql_user="tom"
-mysql_password="cat"
-first_db="test_oms_db"
-second_db="product_oms_db"
 
 #Install java 7
 echo "y" | sudo yum install java-1.7.0-openjdk-devel
@@ -47,14 +43,5 @@ sudo systemctl enable httpd
 sudo sed "/<\/servers>/i <server>\n<id>TomcatServer<\/id>\n<username>$tomcat_user<\/username>\n<password>$tomcat_password<\/password>\n<\/server>\n" /opt/maven/conf/settings.xml | sudo tee /opt/maven/conf/settings2.xml
 sudo mv /opt/maven/conf/settings2.xml /opt/maven/conf/settings.xml
 
-#Install MySQL
-echo "y" | sudo yum install mariadb mariadb-server
-sudo systemctl enable mariadb
-sudo systemctl start mariadb
-mysql -u root -e "CREATE USER '$mysql_user'@'localhost' IDENTIFIED BY '$mysql_password';
-                  GRANT ALL PRIVILEGES ON * . * TO '$mysql_user'@'localhost';
-                  FLUSH PRIVILEGES;"
-mysql -u $mysql_user -p${mysql_password} -e "create database $first_db;
-                                             create database $second_db;"
                                              
 
