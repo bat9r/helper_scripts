@@ -8,7 +8,7 @@ second_db="product_oms_db"
 echo "y" | sudo yum install mariadb mariadb-server
 sudo systemctl enable mariadb
 sudo systemctl start mariadb
-mysql -u root -e "CREATE USER '$mysql_user'@'%' IDENTIFIED BY '$mysql_password';
+mysql -u root -e "CREATE USER '$mysql_user'@'localhost' IDENTIFIED BY '$mysql_password';
                   GRANT ALL PRIVILEGES ON * . * TO '$mysql_user'@'%';
                   GRANT ALL PRIVILEGES ON * . * TO '$mysql_user'@'localhost';
                   FLUSH PRIVILEGES;"
