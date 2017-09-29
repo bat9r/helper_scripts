@@ -10,6 +10,7 @@ sudo systemctl enable mariadb
 sudo systemctl start mariadb
 mysql -u root -e "CREATE USER '$mysql_user'@'%' IDENTIFIED BY '$mysql_password';
                   GRANT ALL PRIVILEGES ON * . * TO '$mysql_user'@'%';
+                  GRANT ALL PRIVILEGES ON * . * TO '$mysql_user'@'localhost';
                   FLUSH PRIVILEGES;"
 mysql -u $mysql_user -p${mysql_password} -e "create database $first_db;
                                              create database $second_db;"
