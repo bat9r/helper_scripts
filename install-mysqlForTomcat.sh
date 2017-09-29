@@ -13,3 +13,6 @@ mysql -u root -e "CREATE USER '$mysql_user'@'%' IDENTIFIED BY '$mysql_password';
                   FLUSH PRIVILEGES;"
 mysql -u $mysql_user -p${mysql_password} -e "create database $first_db;
                                              create database $second_db;"
+
+sudo firewall-cmd --zone=public --add-port=3306/tcp
+sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent
