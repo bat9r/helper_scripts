@@ -34,7 +34,7 @@ echo "y" | sudo yum install tomcat
 sudo echo -e 'JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -Xmx512m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC"' | sudo tee --append /usr/share/tomcat/conf/tomcat.conf
 echo "y" | sudo yum install tomcat-webapps tomcat-admin-webapps 
 echo "y" | sudo yum install tomcat-docs-webapp tomcat-javadoc
-sudo sed "/<\/tomcat-users>/i <role rolename=\"manager-gui\"\/>\n<role rolename=\"manager-script\"\/>\n<user username=\"$tomcat_user\" password=\"$tomcat_password\" roles=\"manager-gui,admin-gui\"\/>\n" /usr/share/tomcat/conf/tomcat-users.xml | sudo tee /usr/share/tomcat/conf/tomcat-users2.xml
+sudo sed "/<\/tomcat-users>/i <role rolename=\"manager-gui\"\/>\n<role rolename=\"manager\"\/>\n<role rolename=\"manager-script\"\/>\n<user username=\"$tomcat_user\" password=\"$tomcat_password\" roles=\"manager-gui,manager,manager-script\"\/>\n" /usr/share/tomcat/conf/tomcat-users.xml | sudo tee /usr/share/tomcat/conf/tomcat-users2.xml
 sudo mv /usr/share/tomcat/conf/tomcat-users2.xml /usr/share/tomcat/conf/tomcat-users.xml
 sudo firewall-cmd --zone=public --add-port=8080/tcp
 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
