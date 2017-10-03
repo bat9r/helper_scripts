@@ -2,9 +2,9 @@
 
 #For CentOS 7
 
-user_name = nagios
+user_name="nagios"
 #user_name=$1
-admin_name = nagiosadmin
+admin_name="nagiosadmin"
 #admin_name=$2
 
 #Security-Enhanced Linux
