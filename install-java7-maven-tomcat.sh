@@ -38,6 +38,7 @@ sudo systemctl start tomcat
 sudo systemctl enable tomcat
 sudo systemctl start httpd
 sudo systemctl enable httpd
+sudo setenforce 0
 
 #Configure tomcat+maven (deploy)
 sudo sed "/<\/servers>/i <server>\n<id>TomcatServer<\/id>\n<username>$tomcat_user<\/username>\n<password>$tomcat_password<\/password>\n<\/server>\n" /opt/maven/conf/settings.xml | sudo tee /opt/maven/conf/settings2.xml
