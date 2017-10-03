@@ -38,6 +38,9 @@ sudo systemctl start tomcat
 sudo systemctl enable tomcat
 sudo systemctl start httpd
 sudo systemctl enable httpd
+
+#Security-Enhanced Linux
+sudo sed -i 's/SELINUX=.*/SELINUX=permissive/g' /etc/selinux/config
 sudo setenforce 0
 
 #Configure tomcat+maven (deploy)
