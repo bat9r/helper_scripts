@@ -2,8 +2,10 @@
 
 #For CentOS 7
 
-user_name=$1
-admin_name=$2
+user_name = nagios
+#user_name=$1
+admin_name = nagiosadmin
+#admin_name=$2
 
 #Security-Enhanced Linux
 sudo sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
