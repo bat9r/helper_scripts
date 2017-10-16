@@ -18,8 +18,7 @@ cd /tmp/nagios-plugins-release-2.2.1/
 sudo make
 sudo make install
 
-cd /etc/local/nagios/libexec/
-sudo wget https://raw.githubusercontent.com/fridim/nagios-plugin-check_galera_cluster/master/check_galera_cluster
+sudo wget -O /etc/local/nagios/libexec/check_galera_cluster https://raw.githubusercontent.com/fridim/nagios-plugin-check_galera_cluster/master/check_galera_cluster
 chmod +x check_galera_cluster
 #Service / Daemon Command
 sudo systemctl restart nagios.service
