@@ -1,3 +1,15 @@
+#Security-Enhanced Linux
+sudo sed -i 's/SELINUX=.*/SELINUX=permissive/g' /etc/selinux/config
+sudo setenforce 0
+
+#Install ntp
+yum -y install ntp
+systemctl start ntpd
+systemctl enable ntpd
+
+yum -y install nfs-utils
+
+#Firewall open
 firewall-cmd --zone=public --add-port=111/tcp
 firewall-cmd --zone=public --add-port=111/tcp --permanent
 
