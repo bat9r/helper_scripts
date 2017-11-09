@@ -4,7 +4,7 @@ mytoken="1qazxsw23edc"
 
 sudo yum -y install wget
 sudo yum -y install httpd
-sudo yum install php.i686
+sudo yum install php
 cd /tmp
 sudo wget -O nrdp.tar.gz https://github.com/NagiosEnterprises/nrdp/archive/1.4.0.tar.gz
 sudo tar -xzf nrdp.tar.gz
