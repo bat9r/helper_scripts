@@ -8,8 +8,9 @@ sudo yum install php
 cd /tmp
 sudo wget -O nrdp.tar.gz https://github.com/NagiosEnterprises/nrdp/archive/1.4.0.tar.gz
 sudo tar -xzf nrdp.tar.gz
-sudo cd /tmp/nrdp-1.4.0/
+cd /tmp/nrdp-1.4.0/
 sudo mkdir -p /usr/local/nrdp
+cd /tmp/nrdp-1.4.0/
 sudo cp -r clients server LICENSE* CHANGES* /usr/local/nrdp
 sudo chown -R nagios:nagios /usr/local/nrdp 
 sudo sed -i "s/cfg\['authorized_tokens'\]\ =\ array(/cfg['authorized_tokens'] = array(\"$mytoken\",\ /g" /usr/local/nrdp/server/config.inc.php
