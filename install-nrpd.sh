@@ -16,6 +16,7 @@ sudo chown -R nagios:nagios /usr/local/nrdp
 sudo sed -i "s/cfg\['authorized_tokens'\]\ =\ array(/cfg['authorized_tokens'] = array(\"$mytoken\",\ /g" /usr/local/nrdp/server/config.inc.php
 #Check this before using
 sudo sed -i 's/cfg\[\"command_file\"\].*/cfg\[\"command_file\"\]\ =\ \"\/var\/spool\/nagios\/cmd\/nagios.cmd\";/g' /usr/local/nrdp/server/config.inc.php
+sudo sed -i 's/cfg\[\"check_results_dir\"\].*/cfg\[\"check_results_dir\"\]\ =\ \"\/usr\/local\/nagios\/var\/spool\/checkresults\";/g' /usr/local/nrdp/server/config.inc.php
 #Check this before using
 sudo cp nrdp.conf /etc/httpd/conf.d/
 sed -i 's/<\/Directory>/Require all granted\n&/' /etc/httpd/conf.d/nrdp.conf
