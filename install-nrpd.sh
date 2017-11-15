@@ -1,5 +1,5 @@
 #CentOS7
-
+#Some todo bugs
 mytoken="1qazxsw23edc"
 
 sudo yum -y install wget
