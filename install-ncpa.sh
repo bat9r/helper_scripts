@@ -1,5 +1,5 @@
 #CentOS 7
-
+#Some todo bugs
 #Variables
 ncpa_token = "qazwsxedc"
 nrdp_token = "1qazxsw23edc"
