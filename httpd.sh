@@ -1,4 +1,5 @@
 #!/bin/bash
+#test
 if [ -f /etc/debian_version ]
 then
 	if ! pidof apache2 > /dev/null
